@@ -80,14 +80,18 @@ function escopo() {
         return number >= 10 ? number : `0${number}`;
     }
 
-    function formatDate(dateNotFormat) {
+    function createDate(dateNotFormat) {
         const day = setZero(dateNotFormat.getDate());
         const year = setZero(dateNotFormat.getFullYear());
         const hours = setZero(dateNotFormat.getHours());
         const minutes = setZero(dateNotFormat.getMinutes());
         const seconds = setZero(dateNotFormat.getSeconds());
 
-        return `${getDayWeek(dateNotFormat.getDay())}, ${day} de ${getMonthText(dateNotFormat.getMonth())} de ${year} ${hours}:${minutes}:${seconds}`;
+        return (
+            `${getDayWeek(dateNotFormat.getDay())}, ${day} de ` + 
+            `${getMonthText(dateNotFormat.getMonth())} ` +
+            `de ${year} ${hours}:${minutes}:${seconds}`
+            );
     }
 
     function setResultado(dateFormat) {
@@ -97,7 +101,7 @@ function escopo() {
     }
 
     const dateNotFormat = new Date();
-    const dateFormat = formatDate(dateNotFormat)
+    const dateFormat = createDate(dateNotFormat)
     setResultado(dateFormat);
 
 }
