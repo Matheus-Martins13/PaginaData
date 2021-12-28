@@ -1,4 +1,4 @@
-function escopo() {
+(function() {
 
     function getDayWeek(dayWeek) {
         let dayWeekText;
@@ -104,6 +104,4 @@ function escopo() {
     const dateFormat = createDate(dateNotFormat)
     setResultado(dateFormat);
 
-}
-
-escopo();
+})();
